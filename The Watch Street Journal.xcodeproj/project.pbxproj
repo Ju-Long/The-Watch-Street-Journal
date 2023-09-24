@@ -28,6 +28,27 @@
 		27A1E55F2A4E908900689F7B /* Data_hexString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A1E55E2A4E908900689F7B /* Data_hexString.swift */; };
 		27BAEA162A446B9200B123D6 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27BAEA152A446B9200B123D6 /* SettingsView.swift */; };
 		27BEAD832AA1C1ED00347498 /* Fuzi in Frameworks */ = {isa = PBXBuildFile; productRef = 27BEAD822AA1C1ED00347498 /* Fuzi */; };
+		27C272AF2AC088F3002711F7 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27C272AE2AC088F3002711F7 /* WidgetKit.framework */; };
+		27C272B12AC088F3002711F7 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27C272B02AC088F3002711F7 /* SwiftUI.framework */; };
+		27C272B42AC088F3002711F7 /* LatestNewsWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C272B32AC088F3002711F7 /* LatestNewsWidget.swift */; };
+		27C272B62AC088F4002711F7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 27C272B52AC088F4002711F7 /* Assets.xcassets */; };
+		27C272BA2AC088F4002711F7 /* The Watch Street Journal WidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 27C272AD2AC088F3002711F7 /* The Watch Street Journal WidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		27C272C02AC08910002711F7 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 27C272BF2AC08910002711F7 /* Kingfisher */; };
+		27C272C22AC08910002711F7 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 27C272C12AC08910002711F7 /* Alamofire */; };
+		27C272C42AC08910002711F7 /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = 27C272C32AC08910002711F7 /* SwiftyJSON */; };
+		27C272C62AC08910002711F7 /* Fuzi in Frameworks */ = {isa = PBXBuildFile; productRef = 27C272C52AC08910002711F7 /* Fuzi */; };
+		27C272C72AC08924002711F7 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278EB2082A544784009E2335 /* Persistence.swift */; };
+		27C272C82AC08927002711F7 /* twsj.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 278EB2052A544743009E2335 /* twsj.xcdatamodeld */; };
+		27C272C92AC0893A002711F7 /* CountryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2704BF942A46A4CE001F2E14 /* CountryModel.swift */; };
+		27C272CA2AC0893A002711F7 /* Scraper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278D46252A3EDFBF00E5140E /* Scraper.swift */; };
+		27C272CB2AC0893A002711F7 /* Data_hexString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A1E55E2A4E908900689F7B /* Data_hexString.swift */; };
+		27C272CC2AC0893A002711F7 /* CustomFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27EE6D1F2A512C32006DA17B /* CustomFileManager.swift */; };
+		27C272CD2AC0893A002711F7 /* Date_-.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278D46272A3EDFC900E5140E /* Date_-.swift */; };
+		27C272CE2AC0893A002711F7 /* GoogleNewsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2704BF8B2A4697AA001F2E14 /* GoogleNewsModel.swift */; };
+		27C272CF2AC0893A002711F7 /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2704BF992A46C658001F2E14 /* Country.swift */; };
+		27C272D02AC0893A002711F7 /* GoogleNews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278D46292A3EDFD500E5140E /* GoogleNews.swift */; };
+		27C272D22AC08B38002711F7 /* TWSJ_WidgetBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C272D12AC08B38002711F7 /* TWSJ_WidgetBundle.swift */; };
+		27C272D42AC08B7D002711F7 /* NewsWithTopicWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C272D32AC08B7D002711F7 /* NewsWithTopicWidget.swift */; };
 		27EE6D202A512C32006DA17B /* CustomFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27EE6D1F2A512C32006DA17B /* CustomFileManager.swift */; };
 /* End PBXBuildFile section */
 
@@ -38,6 +59,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = 278D460A2A3EDF9300E5140E;
 			remoteInfo = "The Watch Street Journal Watch App";
+		};
+		27C272B82AC088F4002711F7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 278D45FF2A3EDF9300E5140E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 27C272AC2AC088F3002711F7;
+			remoteInfo = "The Watch Street Journal WidgetExtension";
 		};
 /* End PBXContainerItemProxy section */
 
@@ -51,6 +79,17 @@
 				278D460C2A3EDF9300E5140E /* The Watch Street Journal Watch App.app in Embed Watch Content */,
 			);
 			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		27C272BE2AC088F4002711F7 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				27C272BA2AC088F4002711F7 /* The Watch Street Journal WidgetExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
@@ -74,6 +113,15 @@
 		278EB2082A544784009E2335 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		27A1E55E2A4E908900689F7B /* Data_hexString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data_hexString.swift; sourceTree = "<group>"; };
 		27BAEA152A446B9200B123D6 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		27C272AD2AC088F3002711F7 /* The Watch Street Journal WidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "The Watch Street Journal WidgetExtension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		27C272AE2AC088F3002711F7 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		27C272B02AC088F3002711F7 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		27C272B32AC088F3002711F7 /* LatestNewsWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LatestNewsWidget.swift; sourceTree = "<group>"; };
+		27C272B52AC088F4002711F7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		27C272B72AC088F4002711F7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		27C272D12AC08B38002711F7 /* TWSJ_WidgetBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TWSJ_WidgetBundle.swift; sourceTree = "<group>"; };
+		27C272D32AC08B7D002711F7 /* NewsWithTopicWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsWithTopicWidget.swift; sourceTree = "<group>"; };
+		27C272D52AC08C1A002711F7 /* The Watch Street Journal WidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "The Watch Street Journal WidgetExtension.entitlements"; sourceTree = "<group>"; };
 		27C828522A4D8A64008DCB46 /* The Watch Street Journal Watch App.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "The Watch Street Journal Watch App.entitlements"; sourceTree = "<group>"; };
 		27C828532A4D8ABC008DCB46 /* The-Watch-Street-Journal-Watch-App-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "The-Watch-Street-Journal-Watch-App-Info.plist"; sourceTree = SOURCE_ROOT; };
 		27EE6D1F2A512C32006DA17B /* CustomFileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomFileManager.swift; sourceTree = "<group>"; };
@@ -91,6 +139,19 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		27C272AA2AC088F3002711F7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				27C272C62AC08910002711F7 /* Fuzi in Frameworks */,
+				27C272C02AC08910002711F7 /* Kingfisher in Frameworks */,
+				27C272C22AC08910002711F7 /* Alamofire in Frameworks */,
+				27C272B12AC088F3002711F7 /* SwiftUI.framework in Frameworks */,
+				27C272C42AC08910002711F7 /* SwiftyJSON in Frameworks */,
+				27C272AF2AC088F3002711F7 /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -105,7 +166,10 @@
 		278D45FE2A3EDF9300E5140E = {
 			isa = PBXGroup;
 			children = (
+				27C272D52AC08C1A002711F7 /* The Watch Street Journal WidgetExtension.entitlements */,
+				27C272A82AC088CA002711F7 /* Shared */,
 				278D460F2A3EDF9300E5140E /* The Watch Street Journal Watch App */,
+				27C272B22AC088F3002711F7 /* The Watch Street Journal Widget */,
 				278D46062A3EDF9300E5140E /* Products */,
 				27C828612A4D9A7D008DCB46 /* Frameworks */,
 			);
@@ -116,6 +180,7 @@
 			children = (
 				278D46052A3EDF9300E5140E /* The Watch Street Journal.app */,
 				278D460B2A3EDF9300E5140E /* The Watch Street Journal Watch App.app */,
+				27C272AD2AC088F3002711F7 /* The Watch Street Journal WidgetExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -127,13 +192,8 @@
 				27C828522A4D8A64008DCB46 /* The Watch Street Journal Watch App.entitlements */,
 				278D46102A3EDF9300E5140E /* The_Watch_Street_JournalApp.swift */,
 				278D46122A3EDF9300E5140E /* ContentView.swift */,
-				278EB2082A544784009E2335 /* Persistence.swift */,
 				27BAEA152A446B9200B123D6 /* SettingsView.swift */,
-				278EB2052A544743009E2335 /* twsj.xcdatamodeld */,
 				2704BF962A46B1EC001F2E14 /* SubView */,
-				278D46242A3EDFB300E5140E /* Controller */,
-				278D46232A3EDFAB00E5140E /* Extensions */,
-				278D46222A3EDFA700E5140E /* Model */,
 				278D46142A3EDF9400E5140E /* Assets.xcassets */,
 				278D46162A3EDF9400E5140E /* Preview Content */,
 				2704BF902A46A2F0001F2E14 /* countries.json */,
@@ -178,9 +238,35 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
+		27C272A82AC088CA002711F7 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				278EB2082A544784009E2335 /* Persistence.swift */,
+				278EB2052A544743009E2335 /* twsj.xcdatamodeld */,
+				278D46242A3EDFB300E5140E /* Controller */,
+				278D46232A3EDFAB00E5140E /* Extensions */,
+				278D46222A3EDFA700E5140E /* Model */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		27C272B22AC088F3002711F7 /* The Watch Street Journal Widget */ = {
+			isa = PBXGroup;
+			children = (
+				27C272B32AC088F3002711F7 /* LatestNewsWidget.swift */,
+				27C272D32AC08B7D002711F7 /* NewsWithTopicWidget.swift */,
+				27C272D12AC08B38002711F7 /* TWSJ_WidgetBundle.swift */,
+				27C272B52AC088F4002711F7 /* Assets.xcassets */,
+				27C272B72AC088F4002711F7 /* Info.plist */,
+			);
+			path = "The Watch Street Journal Widget";
+			sourceTree = "<group>";
+		};
 		27C828612A4D9A7D008DCB46 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				27C272AE2AC088F3002711F7 /* WidgetKit.framework */,
+				27C272B02AC088F3002711F7 /* SwiftUI.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -212,10 +298,12 @@
 				278D46072A3EDF9300E5140E /* Sources */,
 				278D46082A3EDF9300E5140E /* Frameworks */,
 				278D46092A3EDF9300E5140E /* Resources */,
+				27C272BE2AC088F4002711F7 /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				27C272B92AC088F4002711F7 /* PBXTargetDependency */,
 			);
 			name = "The Watch Street Journal Watch App";
 			packageProductDependencies = (
@@ -228,6 +316,29 @@
 			productReference = 278D460B2A3EDF9300E5140E /* The Watch Street Journal Watch App.app */;
 			productType = "com.apple.product-type.application";
 		};
+		27C272AC2AC088F3002711F7 /* The Watch Street Journal WidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 27C272BB2AC088F4002711F7 /* Build configuration list for PBXNativeTarget "The Watch Street Journal WidgetExtension" */;
+			buildPhases = (
+				27C272A92AC088F3002711F7 /* Sources */,
+				27C272AA2AC088F3002711F7 /* Frameworks */,
+				27C272AB2AC088F3002711F7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "The Watch Street Journal WidgetExtension";
+			packageProductDependencies = (
+				27C272BF2AC08910002711F7 /* Kingfisher */,
+				27C272C12AC08910002711F7 /* Alamofire */,
+				27C272C32AC08910002711F7 /* SwiftyJSON */,
+				27C272C52AC08910002711F7 /* Fuzi */,
+			);
+			productName = "The Watch Street Journal WidgetExtension";
+			productReference = 27C272AD2AC088F3002711F7 /* The Watch Street Journal WidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -235,7 +346,7 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1430;
+				LastSwiftUpdateCheck = 1500;
 				LastUpgradeCheck = 1430;
 				TargetAttributes = {
 					278D46042A3EDF9300E5140E = {
@@ -244,6 +355,9 @@
 					};
 					278D460A2A3EDF9300E5140E = {
 						CreatedOnToolsVersion = 14.3.1;
+					};
+					27C272AC2AC088F3002711F7 = {
+						CreatedOnToolsVersion = 15.0;
 					};
 				};
 			};
@@ -268,6 +382,7 @@
 			targets = (
 				278D46042A3EDF9300E5140E /* The Watch Street Journal */,
 				278D460A2A3EDF9300E5140E /* The Watch Street Journal Watch App */,
+				27C272AC2AC088F3002711F7 /* The Watch Street Journal WidgetExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -287,6 +402,14 @@
 				2704BF912A46A2F0001F2E14 /* countries.json in Resources */,
 				278D46182A3EDF9400E5140E /* Preview Assets.xcassets in Resources */,
 				278D46152A3EDF9400E5140E /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		27C272AB2AC088F3002711F7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				27C272B62AC088F4002711F7 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -314,6 +437,26 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		27C272A92AC088F3002711F7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				27C272B42AC088F3002711F7 /* LatestNewsWidget.swift in Sources */,
+				27C272CD2AC0893A002711F7 /* Date_-.swift in Sources */,
+				27C272C72AC08924002711F7 /* Persistence.swift in Sources */,
+				27C272D22AC08B38002711F7 /* TWSJ_WidgetBundle.swift in Sources */,
+				27C272CC2AC0893A002711F7 /* CustomFileManager.swift in Sources */,
+				27C272D02AC0893A002711F7 /* GoogleNews.swift in Sources */,
+				27C272C92AC0893A002711F7 /* CountryModel.swift in Sources */,
+				27C272CA2AC0893A002711F7 /* Scraper.swift in Sources */,
+				27C272CB2AC0893A002711F7 /* Data_hexString.swift in Sources */,
+				27C272CE2AC0893A002711F7 /* GoogleNewsModel.swift in Sources */,
+				27C272CF2AC0893A002711F7 /* Country.swift in Sources */,
+				27C272D42AC08B7D002711F7 /* NewsWithTopicWidget.swift in Sources */,
+				27C272C82AC08927002711F7 /* twsj.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -321,6 +464,11 @@
 			isa = PBXTargetDependency;
 			target = 278D460A2A3EDF9300E5140E /* The Watch Street Journal Watch App */;
 			targetProxy = 278D460D2A3EDF9300E5140E /* PBXContainerItemProxy */;
+		};
+		27C272B92AC088F4002711F7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 27C272AC2AC088F3002711F7 /* The Watch Street Journal WidgetExtension */;
+			targetProxy = 27C272B82AC088F4002711F7 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -375,11 +523,13 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				WATCHOS_DEPLOYMENT_TARGET = 9.0;
 			};
 			name = Debug;
 		};
@@ -427,21 +577,24 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				WATCHOS_DEPLOYMENT_TARGET = 9.0;
 			};
 			name = Release;
 		};
 		278D461C2A3EDF9400E5140E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "The Watch Street Journal Watch App/The Watch Street Journal Watch App.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_ASSET_PATHS = "\"The Watch Street Journal Watch App/Preview Content\"";
 				DEVELOPMENT_TEAM = 5678544286;
@@ -455,7 +608,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.BaBaSaMa.The-Watch-Street-Journal.watchkitapp";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
@@ -470,11 +623,12 @@
 		278D461D2A3EDF9400E5140E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "The Watch Street Journal Watch App/The Watch Street Journal Watch App.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"The Watch Street Journal Watch App/Preview Content\"";
 				DEVELOPMENT_TEAM = 5678544286;
 				ENABLE_PREVIEWS = YES;
@@ -487,7 +641,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.BaBaSaMa.The-Watch-Street-Journal.watchkitapp";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
@@ -506,10 +660,10 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 5678544286;
 				INFOPLIST_KEY_CFBundleDisplayName = "The Watch Street Journal";
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.BaBaSaMa.The-Watch-Street-Journal";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
@@ -524,15 +678,87 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 5678544286;
 				INFOPLIST_KEY_CFBundleDisplayName = "The Watch Street Journal";
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.BaBaSaMa.The-Watch-Street-Journal";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				SWIFT_VERSION = 5.0;
 				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		27C272BC2AC088F4002711F7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = "The Watch Street Journal WidgetExtension.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 5678544286;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "The Watch Street Journal Widget/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "The Watch Street Journal Widget";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.BaBaSaMa.The-Watch-Street-Journal.watchkitapp.The-Watch-Street-Journal-Widget";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 9.0;
+			};
+			name = Debug;
+		};
+		27C272BD2AC088F4002711F7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = "The Watch Street Journal WidgetExtension.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 5678544286;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "The Watch Street Journal Widget/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "The Watch Street Journal Widget";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.BaBaSaMa.The-Watch-Street-Journal.watchkitapp.The-Watch-Street-Journal-Widget";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				VALIDATE_PRODUCT = YES;
+				WATCHOS_DEPLOYMENT_TARGET = 9.0;
 			};
 			name = Release;
 		};
@@ -562,6 +788,15 @@
 			buildConfigurations = (
 				278D46202A3EDF9400E5140E /* Debug */,
 				278D46212A3EDF9400E5140E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		27C272BB2AC088F4002711F7 /* Build configuration list for PBXNativeTarget "The Watch Street Journal WidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				27C272BC2AC088F4002711F7 /* Debug */,
+				27C272BD2AC088F4002711F7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -620,6 +855,26 @@
 			productName = Alamofire;
 		};
 		27BEAD822AA1C1ED00347498 /* Fuzi */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 27BEAD812AA1C1ED00347498 /* XCRemoteSwiftPackageReference "Fuzi" */;
+			productName = Fuzi;
+		};
+		27C272BF2AC08910002711F7 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 278D462B2A3EE00800E5140E /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+		27C272C12AC08910002711F7 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 278D46342A3EE02400E5140E /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		27C272C32AC08910002711F7 /* SwiftyJSON */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2704BF8D2A46A1A8001F2E14 /* XCRemoteSwiftPackageReference "SwiftyJSON" */;
+			productName = SwiftyJSON;
+		};
+		27C272C52AC08910002711F7 /* Fuzi */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 27BEAD812AA1C1ED00347498 /* XCRemoteSwiftPackageReference "Fuzi" */;
 			productName = Fuzi;

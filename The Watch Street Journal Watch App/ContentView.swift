@@ -13,15 +13,14 @@ struct ContentView: View {
     @StateObject private var model = GoogleNewsModel()
     
     @State private var search_text = ""
-    let scalpel = Scraper()
-    
+    @State private var open_sheet = false
     var body: some View {
         NavigationView {
             VStack {
                 if model.news.count > 0 {
                     List {
                         ForEach(model.news) { new in
-                            NewsCell(new: new)
+                            NewsCell(news: new)
                         }
                     }
                     .listStyle(.carousel)
@@ -33,7 +32,7 @@ struct ContentView: View {
                     Text("Loading up for you the \(model.selected_topic.rawValue) news...")
                 }
             }
-            .navigationTitle(Text("\(model.selected_topic.rawValue.capitalized)"))
+            .navigationTitle(Text(search_text.isEmpty ? "\(model.selected_topic.rawValue.capitalized)" : search_text))
             .toolbar {
                 ToolbarItemGroup(placement: .confirmationAction) {
                     NavigationLink {
@@ -44,22 +43,9 @@ struct ContentView: View {
                 }
 
                 ToolbarItemGroup(placement: .primaryAction) {
-                    ScrollView(.horizontal) {
-                        HStack(spacing: 5) {
-                            ForEach(GoogleNewsModel.Topic.allCases) { topic in
-                                Button(topic.rawValue.capitalized) {
-                                    if search_text.isEmpty {
-                                        model.selected_topic = topic
-                                    } else {
-                                        search_text = ""
-                                        model.changeTopic()
-                                    }
-                                }
-                                    .underline(topic == model.selected_topic)
-                            }
-                        }
+                    Button("Change Topic") {
+                        open_sheet = true
                     }
-                    .padding(.bottom)
                 }
             }
         }
@@ -71,17 +57,35 @@ struct ContentView: View {
             if v.isEmpty { return }
             model.searchNews(text: v)
         }
+        .sheet(isPresented: $open_sheet) {
+            List {
+                ForEach(GoogleNewsModel.Topic.allCases) { topic in
+                    Button(topic.rawValue.capitalized) {
+                        if search_text.isEmpty {
+                            model.selected_topic = topic
+                        } else {
+                            search_text = ""
+                            model.changeTopic()
+                        }
+                        
+                        open_sheet = false
+                    }
+                    .disabled(topic == model.selected_topic && search_text.isEmpty)
+                    .underline(topic == model.selected_topic && search_text.isEmpty)
+                }
+            }
+        }
     }
 }
 
 struct NewsCell: View {
-    let new: GoogleNews
+    let news: GoogleNews
     
     @State private var news_url: URL?
     @State private var news_img_url: URL?
     @State private var show: Bool = false
     
-    let scalpel = Scraper()
+    let scraper = Scraper()
     
     var body: some View {
         VStack {
@@ -97,17 +101,17 @@ struct NewsCell: View {
                             .cacheOriginalImage()
                     }
                     
-                    Text(new.source.source)
+                    Text(news.source.source)
                         .font(.headline)
                         .fontWeight(.bold)
                 }
                 
-                Text(new.source.title)
+                Text(news.source.title)
                     .font(.subheadline)
                     .fontWeight(.medium)
                     .foregroundColor(.primary)
                 
-                Text("Published \(Date() - new.publish_date) Ago")
+                Text("Published \(Date() - news.publish_date) Ago")
                     .font(.caption)
                     .foregroundColor(.secondary)
                     .fontWeight(.light)
@@ -126,7 +130,7 @@ struct NewsCell: View {
         .onAppear {
             Task(priority: .background) {
                 do {
-                    let news_url = try await scalpel.getNewsLinkFromGoogleRedirect(new.source.source_url)
+                    let news_url = try await scraper.getNewsLinkFromGoogleRedirect(news.source.source_url)
                     self.news_url = news_url
                     
                     if let host = news_url.host,

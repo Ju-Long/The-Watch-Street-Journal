@@ -9,10 +9,10 @@ import Foundation
 import Fuzi
 
 class GoogleNewsModel: ObservableObject {
-//    HEADLINES_RSS = 'https://news.google.com/news/rss';
-//    TOPICS_RSS    = 'https://news.google.com/news/rss/headlines/section/topic/';
-//    GEO_RSS       = 'https://news.google.com/news/rss/headlines/section/geo/';
-//    SEARCH_RSS    = 'https://news.google.com/rss/search?q=';
+    //    HEADLINES_RSS = 'https://news.google.com/news/rss';
+    //    TOPICS_RSS    = 'https://news.google.com/news/rss/headlines/section/topic/';
+    //    GEO_RSS       = 'https://news.google.com/news/rss/headlines/section/geo/';
+    //    SEARCH_RSS    = 'https://news.google.com/rss/search?q=';
     
     @Published var news: [GoogleNews] = []
     @Published var selected_topic: Topic = .latest
@@ -40,7 +40,7 @@ class GoogleNewsModel: ObservableObject {
                     let file_content = try file_manager.readFile(filename)
                     let stored_news = try scraper.fetchNewsFromXML(value: file_content)
                     
-                    DispatchQueue.main.async {
+                    await MainActor.run {
                         self.news = stored_news
                     }
                     
@@ -53,7 +53,7 @@ class GoogleNewsModel: ObservableObject {
                         
                         try file_manager.writeToFile(retrieved_news, filename)
                         let news = try scraper.fetchNewsFromXML(value: retrieved_news)
-                        DispatchQueue.main.async {
+                        await MainActor.run {
                             self.news = news
                         }
                     }
@@ -61,7 +61,7 @@ class GoogleNewsModel: ObservableObject {
                 }
                 
                 let news = try scraper.fetchNewsFromXML(value: retrieved_news)
-                DispatchQueue.main.async {
+                await MainActor.run {
                     self.news = news
                 }
             } catch {
@@ -84,7 +84,7 @@ class GoogleNewsModel: ObservableObject {
         
         guard let region = locale.region,
               region.isISORegion,
-            let language_code = locale.language.languageCode?.identifier else {
+              let language_code = locale.language.languageCode?.identifier else {
             return ""
         }
         
@@ -113,7 +113,7 @@ class GoogleNewsModel: ObservableObject {
                     let file_content = try file_manager.readFile(filename)
                     let stored_news = try scraper.fetchNewsFromXML(value: file_content)
                     
-                    DispatchQueue.main.async {
+                    await MainActor.run {
                         self.news = stored_news
                     }
                     
@@ -126,7 +126,7 @@ class GoogleNewsModel: ObservableObject {
                         
                         try file_manager.writeToFile(retrieved_news, filename)
                         let news = try scraper.fetchNewsFromXML(value: retrieved_news)
-                        DispatchQueue.main.async {
+                        await MainActor.run {
                             self.news = news
                         }
                     }
@@ -134,7 +134,7 @@ class GoogleNewsModel: ObservableObject {
                 }
                 
                 let news = try scraper.fetchNewsFromXML(value: retrieved_news)
-                DispatchQueue.main.async {
+                await MainActor.run {
                     self.news = news
                 }
             } catch {
@@ -161,7 +161,7 @@ class GoogleNewsModel: ObservableObject {
                     let file_content = try file_manager.readFile(filename)
                     let stored_news = try scraper.fetchNewsFromXML(value: file_content)
                     
-                    DispatchQueue.main.async {
+                    await MainActor.run {
                         self.news = stored_news
                     }
                     
@@ -174,7 +174,7 @@ class GoogleNewsModel: ObservableObject {
                         
                         try file_manager.writeToFile(retrieved_news, filename)
                         let news = try scraper.fetchNewsFromXML(value: retrieved_news)
-                        DispatchQueue.main.async {
+                        await MainActor.run {
                             self.news = news
                         }
                     }
@@ -182,7 +182,7 @@ class GoogleNewsModel: ObservableObject {
                 }
                 
                 let news = try scraper.fetchNewsFromXML(value: retrieved_news)
-                DispatchQueue.main.async {
+                await MainActor.run {
                     self.news = news
                 }
             } catch {
@@ -209,7 +209,7 @@ class GoogleNewsModel: ObservableObject {
                     let file_content = try file_manager.readFile(filename)
                     let stored_news = try scraper.fetchNewsFromXML(value: file_content)
                     
-                    DispatchQueue.main.async {
+                    await MainActor.run {
                         self.news = stored_news
                     }
                     
@@ -222,7 +222,7 @@ class GoogleNewsModel: ObservableObject {
                         
                         try file_manager.writeToFile(retrieved_news, filename)
                         let news = try scraper.fetchNewsFromXML(value: retrieved_news)
-                        DispatchQueue.main.async {
+                        await MainActor.run {
                             self.news = news
                         }
                     }
@@ -230,13 +230,112 @@ class GoogleNewsModel: ObservableObject {
                 }
                 
                 let news = try scraper.fetchNewsFromXML(value: retrieved_news)
-                DispatchQueue.main.async {
+                await MainActor.run {
                     self.news = news
                 }
             } catch {
                 debugPrint(error)
             }
         }
+    }
+    
+    public func latestNews() async throws -> GoogleNews? {
+        guard news.isEmpty else {
+            return news.first
+        }
+        
+        guard let google_news_url = URL(string: "https://news.google.com/rss?\(fillCountryLangParams())") else {
+            error = "https://news.google.com/rss?\(fillCountryLangParams())"
+            debugPrint(#file, #line)
+            debugPrint(error)
+            throw ModelError.invalidGoogleURL(string: error)
+        }
+        let filename = "\(self.selected_topic.rawValue)-news.txt"
+        
+        let retrieved_news = try await scraper.fetchNewsFromGoogle(url: google_news_url)
+        
+        if file_manager.fileExist(filename) {
+            let file_content = try file_manager.readFile(filename)
+            let stored_news = try scraper.fetchNewsFromXML(value: file_content)
+            
+            await MainActor.run {
+                self.news = stored_news
+            }
+            
+            let retrieved_xml = try XMLDocument(string: retrieved_news)
+            let stored_xml = try XMLDocument(string: file_content)
+            
+            if let retrieved_date = retrieved_xml.firstChild(xpath: "/rss/channel/lastBuildDate")?.stringValue,
+               let stored_date = stored_xml.firstChild(xpath: "/rss/channel/lastBuildDate")?.stringValue,
+               stored_date != retrieved_date {
+                
+                try file_manager.writeToFile(retrieved_news, filename)
+                let news = try scraper.fetchNewsFromXML(value: retrieved_news)
+                await MainActor.run {
+                    self.news = news
+                }
+            }
+            return self.news.first
+        }
+        
+        let news = try scraper.fetchNewsFromXML(value: retrieved_news)
+        await MainActor.run {
+            self.news = news
+        }
+        return self.news.first
+    }
+    
+    public func latestNewsWithTopic(_ topic: Topic = .latest) async throws -> GoogleNews? {
+        news.removeAll()
+        let filename = "\(topic.rawValue)-news.txt"
+        
+        guard var google_news_url = URL(string: "https://news.google.com/news/rss/headlines/section/topic/\(topic.rawValue.uppercased())?\(fillCountryLangParams())") else {
+            error = " https://news.google.com/news/rss/headlines/section/topic/\(topic.rawValue.uppercased())?\(fillCountryLangParams())"
+            debugPrint(#file, #line)
+            debugPrint(error)
+            throw ModelError.invalidGoogleURL(string: error)
+        }
+        
+        if selected_topic == .latest {
+            google_news_url = URL(string: "https://news.google.com/rss?\(fillCountryLangParams())")!
+        }
+        
+        let retrieved_news = try await scraper.fetchNewsFromGoogle(url: google_news_url)
+        if file_manager.fileExist(filename) {
+            let file_content = try file_manager.readFile(filename)
+            let stored_news = try scraper.fetchNewsFromXML(value: file_content)
+            
+            await MainActor.run {
+                self.news = stored_news
+            }
+            
+            let retrieved_xml = try XMLDocument(string: retrieved_news)
+            let stored_xml = try XMLDocument(string: file_content)
+            
+            if let retrieved_date = retrieved_xml.firstChild(xpath: "/rss/channel/lastBuildDate")?.stringValue,
+               let stored_date = stored_xml.firstChild(xpath: "/rss/channel/lastBuildDate")?.stringValue,
+               stored_date != retrieved_date {
+                
+                try file_manager.writeToFile(retrieved_news, filename)
+                let news = try scraper.fetchNewsFromXML(value: retrieved_news)
+                await MainActor.run {
+                    self.news = news
+                }
+            }
+            return self.news.first
+        }
+        
+        let news = try scraper.fetchNewsFromXML(value: retrieved_news)
+        await MainActor.run {
+            self.news = news
+        }
+        
+        return self.news.first
+    }
+    
+    private enum ModelError: Error {
+        case invalidGoogleURL(string: String)
+        case unknownTopic
     }
 }
 
