@@ -30,6 +30,8 @@ struct ContentView: View {
                         .progressViewStyle(.circular)
 
                     Text("Loading up for you the \(model.selected_topic.rawValue) news...")
+                        .multilineTextAlignment(.center)
+                        .lineLimit(2)
                 }
             }
             .navigationTitle(Text(search_text.isEmpty ? "\(model.selected_topic.rawValue.capitalized)" : search_text))
@@ -119,7 +121,7 @@ struct NewsCell: View {
             }
             .onTapGesture {
                 Task(priority: .high) {
-                    guard let news_url = news_url else { return }
+                    guard let news_url = URL(string: news.source.url) else { return }
                     
                     let session = ASWebAuthenticationSession(url: news_url, callbackURLScheme: nil) { _, _ in }
                     session.prefersEphemeralWebBrowserSession = true
@@ -129,16 +131,8 @@ struct NewsCell: View {
         }
         .onAppear {
             Task(priority: .background) {
-                do {
-                    let news_url = try await scraper.getNewsLinkFromGoogleRedirect(news.source.source_url)
-                    self.news_url = news_url
-                    
-                    if let host = news_url.host,
-                       let img_url = URL(string: "https://www.google.com/s2/favicons?sz=512&domain=\(host)") {
-                        news_img_url = img_url
-                    }
-                } catch {
-                    debugPrint(error)
+                if let img_url = URL(string: "https://www.google.com/s2/favicons?sz=512&domain=\(news.source.source_url)") {
+                    news_img_url = img_url
                 }
             }
         }

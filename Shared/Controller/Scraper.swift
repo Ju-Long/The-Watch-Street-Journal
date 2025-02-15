@@ -58,6 +58,7 @@ class Scraper {
 
                 descriptions.append(GoogleNews.GoogleNewsSource(
                     title: link.stringValue,
+                    url: link["href"]!,
                     source: source.stringValue,
                     source_url: link["href"]!
                 ))
@@ -70,7 +71,9 @@ class Scraper {
 
         guard let title = item.firstChild(xpath: "title")?.stringValue,
               let source = item.firstChild(xpath: "source")?.stringValue,
-              let source_url_string = item.firstChild(xpath: "link")?.stringValue,
+              let news_url_string = item.firstChild(xpath: "link")?.stringValue,
+              let source_url_string = item.firstChild(xpath: "source")?.attr("url"),
+              URL(string: news_url_string) != nil,
               URL(string: source_url_string) != nil,
               let publish_date_string = item.firstChild(xpath: "pubDate")?.stringValue,
               let publish_date = dateformatter.date(from: publish_date_string) else {
@@ -84,7 +87,7 @@ class Scraper {
         }
 
         return GoogleNews(source: GoogleNews.GoogleNewsSource(
-            title: title, source: source, source_url: source_url_string), publish_date: publish_date, description: descriptions)
+            title: title, url: news_url_string, source: source, source_url: source_url_string), publish_date: publish_date, description: descriptions)
     }
     
     public func getNewsLinkFromGoogleRedirect(_ link: String) async throws -> URL {

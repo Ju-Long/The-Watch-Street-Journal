@@ -16,6 +16,7 @@ struct GoogleNews {
     
     struct GoogleNewsSource {
         let title: String
+        let url: String
         let source: String
         let source_url: String
     }

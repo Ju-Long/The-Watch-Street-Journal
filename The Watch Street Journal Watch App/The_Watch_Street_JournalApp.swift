@@ -15,7 +15,7 @@ struct The_Watch_Street_Journal_Watch_AppApp: App {
     
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView() 
                 .environment(\.managedObjectContext, persistenceController.managedObjectContext)
 //            TestContentView()
         }

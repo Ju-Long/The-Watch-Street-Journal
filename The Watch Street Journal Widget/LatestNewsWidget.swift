@@ -160,6 +160,7 @@ struct LatestNews_EntryView: View {
                 }
             }
         }
+        .widgetBackground(Color.black)
     }
 }
 
@@ -175,5 +176,17 @@ struct LatestNewsWidget: Widget {
             .configurationDisplayName(Text("TWSJ Latest General News"))
             .description(Text("Display the latest news retrieved from Google News"))
             .supportedFamilies([.accessoryRectangular])
+    }
+}
+
+extension View {
+    func widgetBackground(_ backgroundView: some View) -> some View {
+        if #available(watchOS 10.0, *) {
+            return containerBackground(for: .widget) {
+                backgroundView
+            }
+        } else {
+            return background(backgroundView)
+        }
     }
 }
