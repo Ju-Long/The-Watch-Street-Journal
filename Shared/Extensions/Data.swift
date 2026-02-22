@@ -1,8 +1,8 @@
 //
-//  Data_hexString.swift
-//  The Watch Street Journal Watch App
+//  Data.swift
+//  The Watch Street Journal
 //
-//  Created by BaBaSaMa on 30/6/23.
+//  Created by Long Ju on 2/20/26.
 //
 
 import Foundation

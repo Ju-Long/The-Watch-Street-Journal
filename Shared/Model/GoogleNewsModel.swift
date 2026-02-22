@@ -70,6 +70,7 @@ class GoogleNewsModel: ObservableObject {
         }
     }
     
+    // MARK: - fillCountryLangParams(Country?) -> String
     private func fillCountryLangParams(_ country: Country? = nil) -> String {
         if let country = country {
             return "hl=\(country.language_code.lowercased())-\(country.code.uppercased())&gl=\(country.code.uppercased())&ceid=\(country.code.uppercased()):\(country.language_code.lowercased())"
@@ -91,7 +92,7 @@ class GoogleNewsModel: ObservableObject {
         return "hl=\(language_code)-\(region.identifier)&gl=\(region.identifier)&ceid=\(region.identifier):\(language_code)"
     }
     
-    // MARK: - Change topic of news
+    // MARK: - changeTopic()
     public func changeTopic() {
         news.removeAll()
         let filename = "\(self.selected_topic.rawValue)-news.txt"
@@ -143,7 +144,7 @@ class GoogleNewsModel: ObservableObject {
         }
     }
     
-    // MARK: - Change country of news
+    // MARK: - changeCountry(Country)
     public func changeCountry(_ country: Country) {
         news.removeAll()
         guard let google_news_url = URL(string: "https://news.google.com/rss?\(fillCountryLangParams(country))") else {
@@ -191,7 +192,7 @@ class GoogleNewsModel: ObservableObject {
         }
     }
     
-    // MARK: - Search news
+    // MARK: - searchNews(String)
     public func searchNews(text: String) {
         news.removeAll()
         guard let google_news_url = URL(string: "https://news.google.com/rss/search?q=\(text.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)!)&\(fillCountryLangParams())") else {
@@ -239,6 +240,7 @@ class GoogleNewsModel: ObservableObject {
         }
     }
     
+    // MARK: - latestNews() -> GoogleNews?
     public func latestNews() async throws -> GoogleNews? {
         guard news.isEmpty else {
             return news.first
@@ -285,6 +287,7 @@ class GoogleNewsModel: ObservableObject {
         return self.news.first
     }
     
+    // MARK: - latestNewsWithTopic(Topic) -> GoogleNews?
     public func latestNewsWithTopic(_ topic: Topic = .latest) async throws -> GoogleNews? {
         news.removeAll()
         let filename = "\(topic.rawValue)-news.txt"
@@ -333,15 +336,13 @@ class GoogleNewsModel: ObservableObject {
         return self.news.first
     }
     
+    // MARK: ModelError
     private enum ModelError: Error {
         case invalidGoogleURL(string: String)
         case unknownTopic
     }
-}
-
-
-// MARK: - Topics
-extension GoogleNewsModel {
+    
+    // MARK: - Topics
     enum Topic: String, CaseIterable, Identifiable {
         var id: Self { self }
         

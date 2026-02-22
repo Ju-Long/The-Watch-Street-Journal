@@ -19,8 +19,8 @@ struct ContentView: View {
             VStack {
                 if model.news.count > 0 {
                     List {
-                        ForEach(model.news) { new in
-                            NewsCell(news: new)
+                        ForEach(model.news) { news in
+                            NewsCell(news: news)
                         }
                     }
                     .listStyle(.carousel)
@@ -42,12 +42,14 @@ struct ContentView: View {
                     } label: {
                         Label("Settings", systemImage: "gear.circle")
                     }
+                    .accessibilityLabel(Text("Settings Page"))
                 }
 
                 ToolbarItemGroup(placement: .primaryAction) {
                     Button("Change Topic") {
                         open_sheet = true
                     }
+                    .accessibilityLabel(Text("Open Topic Selection Sheet"))
                 }
             }
         }
@@ -74,6 +76,7 @@ struct ContentView: View {
                     }
                     .disabled(topic == model.selected_topic && search_text.isEmpty)
                     .underline(topic == model.selected_topic && search_text.isEmpty)
+                    .accessibilityLabel(Text("\(topic.rawValue.capitalized) topic"))
                 }
             }
         }
@@ -136,5 +139,6 @@ struct NewsCell: View {
                 }
             }
         }
+        .accessibilityLabel(Text("\(news.source.title) by \(news.source.source)"))
     }
 }
