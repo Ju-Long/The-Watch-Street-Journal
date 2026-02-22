@@ -22,6 +22,7 @@ class CountryModel: ObservableObject {
     
     private let defaults = UserDefaults(suiteName: "group.com.BaBaSaMa.The-Watch-Street-Journal") ?? UserDefaults.standard
     
+    // MARK: init
     init() {
         do {
             guard let file = Bundle.main.url(forResource: "countries", withExtension: "json"),
@@ -46,6 +47,7 @@ class CountryModel: ObservableObject {
         }
     }
     
+    // MARK: - loadSelectedCountry
     private func loadSelectedCountry() {
         do {
             let request = NSFetchRequest<SelectedCountryHistory>(entityName: "SelectedCountryHistory")
@@ -71,11 +73,8 @@ class CountryModel: ObservableObject {
         selected_country = countries.first(where: { locale.identifier.contains($0.code) })
     }
     
-    public func selectCountry(_ country: Country) {
-        if let selected_country = selected_country  {
-        }
-        
-        selected_country = country
+    // MARK: - selectCountry(Country)
+    public func selectCountry(_ country: Country) {selected_country = country
         defaults.setValue(country.language_code, forKey: "language")
         defaults.setValue(country.code, forKey: "region")
         

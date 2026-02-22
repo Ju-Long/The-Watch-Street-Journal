@@ -122,18 +122,24 @@ struct LatestNews_EntryView: View {
     var entry: LatestNewsWidgetProvider.Entry
     
     var body: some View {
-        HStack {
-            if let error = entry.error {
+        if let error = entry.error {
+            HStack {
                 Image(systemName: "exclamationmark.triangle.fill")
                     .foregroundStyle(.yellow)
                 
                 Text(error.localizedDescription)
                     .lineLimit(3)
                     .font(.headline)
-            } else if let latest_news = entry.latest_news {
+            }
+            .widgetBackground(Color.black)
+            .accessibilityElement()
+            .accessibilityLabel(Text("Error, \(error.localizedDescription)"))
+        } else if let latest_news = entry.latest_news {
+            HStack {
                 if entry.image_error != nil {
-                    Image(systemName: "exclamationmark.triangle.fill")
-                        .foregroundStyle(.yellow)
+                    Image(systemName: "circle.slash")
+                        .foregroundStyle(.primary)
+                        .widgetAccentable(true)
                 } else {
                     Image(uiImage: entry.image!)
                         .resizable()
@@ -146,8 +152,14 @@ struct LatestNews_EntryView: View {
                     Text(latest_news.source.title)
                         .lineLimit(3)
                         .font(.caption2)
+                        .multilineTextAlignment(.leading)
                 }
-            } else {
+            }
+            .widgetBackground(Color.black)
+            .accessibilityElement()
+            .accessibilityLabel(Text("\(latest_news.source.title) by \(latest_news.source.source)"))
+        } else {
+            HStack {
                 RoundedRectangle(cornerRadius: 12)
                     .fill(Color.init(red: 1, green: 1, blue: 1, opacity: 0.2))
                     .frame(maxWidth: entry.size.width * 0.25)
@@ -159,8 +171,10 @@ struct LatestNews_EntryView: View {
                         .fontWeight(.bold)
                 }
             }
+            .widgetBackground(Color.black)
+            .accessibilityElement()
+            .accessibilityLabel(Text("Latest General News Headline"))
         }
-        .widgetBackground(Color.black)
     }
 }
 

@@ -17,11 +17,8 @@ struct The_Watch_Street_Journal_Watch_AppApp: App {
         WindowGroup {
             ContentView() 
                 .environment(\.managedObjectContext, persistenceController.managedObjectContext)
-//            TestContentView()
         }
     }
 }
 
-class AppDelegate: NSObject, WKApplicationDelegate {
-    
-}
+class AppDelegate: NSObject, WKApplicationDelegate { }

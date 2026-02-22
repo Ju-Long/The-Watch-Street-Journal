@@ -5,8 +5,6 @@
 //  Created by BaBaSaMa on 18/6/23.
 //
 
-// TODO: convert to fuzi one day https://github.com/cezheng/Fuzi.git
-
 import Foundation
 import Alamofire
 import Fuzi
@@ -14,6 +12,7 @@ import Fuzi
 class Scraper {
     init() { }
     
+    // MARK: fetchNewsFromGoogle(URL) -> String
     func fetchNewsFromGoogle(url: URL) async throws -> String {
         let request = await AF.request(url, method: .get).serializingString().response
         switch request.result {
@@ -26,6 +25,7 @@ class Scraper {
         }
     }
     
+    // MARK: fetchNewsFromXML(String) -> [GoogleNews]
     func fetchNewsFromXML(value: String) throws -> [GoogleNews] {
         let xml = try XMLDocument(string: value)
         var news: [GoogleNews] = []
@@ -43,6 +43,7 @@ class Scraper {
         return news
     }
     
+    // MARK: getGoogleNewsItem(XMLElement) -> GoogleNews
     private func getGoogleNewsItem(_ item: XMLElement) throws -> GoogleNews {
         guard let description = item.firstChild(xpath: "description")?.stringValue else {
             debugPrint("throw here", #line)
@@ -90,6 +91,7 @@ class Scraper {
             title: title, url: news_url_string, source: source, source_url: source_url_string), publish_date: publish_date, description: descriptions)
     }
     
+    // MARK: getNewsLinkFromGoogleRedirect(String) -> URL
     public func getNewsLinkFromGoogleRedirect(_ link: String) async throws -> URL {
         let request = await AF.request(link, method: .get).serializingString().response
         switch request.result {

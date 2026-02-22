@@ -13,19 +13,20 @@
 		2704BF952A46A4CE001F2E14 /* CountryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2704BF942A46A4CE001F2E14 /* CountryModel.swift */; };
 		2704BF982A46B20B001F2E14 /* CountryPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2704BF972A46B20B001F2E14 /* CountryPicker.swift */; };
 		2704BF9A2A46C658001F2E14 /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2704BF992A46C658001F2E14 /* Country.swift */; };
+		2742FD142F487B4100BD3ACC /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2742FD132F487B4100BD3ACC /* Data.swift */; };
+		2742FD152F487B4100BD3ACC /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2742FD132F487B4100BD3ACC /* Data.swift */; };
 		278D460C2A3EDF9300E5140E /* The Watch Street Journal Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 278D460B2A3EDF9300E5140E /* The Watch Street Journal Watch App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		278D46112A3EDF9300E5140E /* The_Watch_Street_JournalApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278D46102A3EDF9300E5140E /* The_Watch_Street_JournalApp.swift */; };
 		278D46132A3EDF9300E5140E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278D46122A3EDF9300E5140E /* ContentView.swift */; };
 		278D46152A3EDF9400E5140E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 278D46142A3EDF9400E5140E /* Assets.xcassets */; };
 		278D46182A3EDF9400E5140E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 278D46172A3EDF9400E5140E /* Preview Assets.xcassets */; };
 		278D46262A3EDFBF00E5140E /* Scraper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278D46252A3EDFBF00E5140E /* Scraper.swift */; };
-		278D46282A3EDFC900E5140E /* Date_-.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278D46272A3EDFC900E5140E /* Date_-.swift */; };
+		278D46282A3EDFC900E5140E /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278D46272A3EDFC900E5140E /* Date.swift */; };
 		278D462A2A3EDFD500E5140E /* GoogleNews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278D46292A3EDFD500E5140E /* GoogleNews.swift */; };
 		278D462D2A3EE00800E5140E /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 278D462C2A3EE00800E5140E /* Kingfisher */; };
 		278D46362A3EE02400E5140E /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 278D46352A3EE02400E5140E /* Alamofire */; };
 		278EB2072A544743009E2335 /* twsj.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 278EB2052A544743009E2335 /* twsj.xcdatamodeld */; };
 		278EB2092A544784009E2335 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278EB2082A544784009E2335 /* Persistence.swift */; };
-		27A1E55F2A4E908900689F7B /* Data_hexString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A1E55E2A4E908900689F7B /* Data_hexString.swift */; };
 		27BAEA162A446B9200B123D6 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27BAEA152A446B9200B123D6 /* SettingsView.swift */; };
 		27BEAD832AA1C1ED00347498 /* Fuzi in Frameworks */ = {isa = PBXBuildFile; productRef = 27BEAD822AA1C1ED00347498 /* Fuzi */; };
 		27C272AF2AC088F3002711F7 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27C272AE2AC088F3002711F7 /* WidgetKit.framework */; };
@@ -41,9 +42,8 @@
 		27C272C82AC08927002711F7 /* twsj.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 278EB2052A544743009E2335 /* twsj.xcdatamodeld */; };
 		27C272C92AC0893A002711F7 /* CountryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2704BF942A46A4CE001F2E14 /* CountryModel.swift */; };
 		27C272CA2AC0893A002711F7 /* Scraper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278D46252A3EDFBF00E5140E /* Scraper.swift */; };
-		27C272CB2AC0893A002711F7 /* Data_hexString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A1E55E2A4E908900689F7B /* Data_hexString.swift */; };
 		27C272CC2AC0893A002711F7 /* CustomFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27EE6D1F2A512C32006DA17B /* CustomFileManager.swift */; };
-		27C272CD2AC0893A002711F7 /* Date_-.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278D46272A3EDFC900E5140E /* Date_-.swift */; };
+		27C272CD2AC0893A002711F7 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278D46272A3EDFC900E5140E /* Date.swift */; };
 		27C272CE2AC0893A002711F7 /* GoogleNewsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2704BF8B2A4697AA001F2E14 /* GoogleNewsModel.swift */; };
 		27C272CF2AC0893A002711F7 /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2704BF992A46C658001F2E14 /* Country.swift */; };
 		27C272D02AC0893A002711F7 /* GoogleNews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278D46292A3EDFD500E5140E /* GoogleNews.swift */; };
@@ -100,6 +100,7 @@
 		2704BF942A46A4CE001F2E14 /* CountryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryModel.swift; sourceTree = "<group>"; };
 		2704BF972A46B20B001F2E14 /* CountryPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryPicker.swift; sourceTree = "<group>"; };
 		2704BF992A46C658001F2E14 /* Country.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
+		2742FD132F487B4100BD3ACC /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 		278D46052A3EDF9300E5140E /* The Watch Street Journal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "The Watch Street Journal.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		278D460B2A3EDF9300E5140E /* The Watch Street Journal Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "The Watch Street Journal Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		278D46102A3EDF9300E5140E /* The_Watch_Street_JournalApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = The_Watch_Street_JournalApp.swift; sourceTree = "<group>"; };
@@ -107,11 +108,10 @@
 		278D46142A3EDF9400E5140E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		278D46172A3EDF9400E5140E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		278D46252A3EDFBF00E5140E /* Scraper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scraper.swift; sourceTree = "<group>"; };
-		278D46272A3EDFC900E5140E /* Date_-.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date_-.swift"; sourceTree = "<group>"; };
+		278D46272A3EDFC900E5140E /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		278D46292A3EDFD500E5140E /* GoogleNews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleNews.swift; sourceTree = "<group>"; };
 		278EB2062A544743009E2335 /* twsj.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = twsj.xcdatamodel; sourceTree = "<group>"; };
 		278EB2082A544784009E2335 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
-		27A1E55E2A4E908900689F7B /* Data_hexString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data_hexString.swift; sourceTree = "<group>"; };
 		27BAEA152A446B9200B123D6 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		27C272AD2AC088F3002711F7 /* The Watch Street Journal WidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "The Watch Street Journal WidgetExtension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		27C272AE2AC088F3002711F7 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
@@ -223,8 +223,8 @@
 		278D46232A3EDFAB00E5140E /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				278D46272A3EDFC900E5140E /* Date_-.swift */,
-				27A1E55E2A4E908900689F7B /* Data_hexString.swift */,
+				278D46272A3EDFC900E5140E /* Date.swift */,
+				2742FD132F487B4100BD3ACC /* Data.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -427,9 +427,9 @@
 				278D46132A3EDF9300E5140E /* ContentView.swift in Sources */,
 				278D462A2A3EDFD500E5140E /* GoogleNews.swift in Sources */,
 				2704BF982A46B20B001F2E14 /* CountryPicker.swift in Sources */,
+				2742FD152F487B4100BD3ACC /* Data.swift in Sources */,
 				27EE6D202A512C32006DA17B /* CustomFileManager.swift in Sources */,
-				27A1E55F2A4E908900689F7B /* Data_hexString.swift in Sources */,
-				278D46282A3EDFC900E5140E /* Date_-.swift in Sources */,
+				278D46282A3EDFC900E5140E /* Date.swift in Sources */,
 				278EB2072A544743009E2335 /* twsj.xcdatamodeld in Sources */,
 				278D46112A3EDF9300E5140E /* The_Watch_Street_JournalApp.swift in Sources */,
 				2704BF9A2A46C658001F2E14 /* Country.swift in Sources */,
@@ -442,14 +442,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				27C272B42AC088F3002711F7 /* LatestNewsWidget.swift in Sources */,
-				27C272CD2AC0893A002711F7 /* Date_-.swift in Sources */,
+				27C272CD2AC0893A002711F7 /* Date.swift in Sources */,
 				27C272C72AC08924002711F7 /* Persistence.swift in Sources */,
 				27C272D22AC08B38002711F7 /* TWSJ_WidgetBundle.swift in Sources */,
 				27C272CC2AC0893A002711F7 /* CustomFileManager.swift in Sources */,
 				27C272D02AC0893A002711F7 /* GoogleNews.swift in Sources */,
 				27C272C92AC0893A002711F7 /* CountryModel.swift in Sources */,
 				27C272CA2AC0893A002711F7 /* Scraper.swift in Sources */,
-				27C272CB2AC0893A002711F7 /* Data_hexString.swift in Sources */,
+				2742FD142F487B4100BD3ACC /* Data.swift in Sources */,
 				27C272CE2AC0893A002711F7 /* GoogleNewsModel.swift in Sources */,
 				27C272CF2AC0893A002711F7 /* Country.swift in Sources */,
 				27C272D42AC08B7D002711F7 /* NewsWithTopicWidget.swift in Sources */,
@@ -615,7 +615,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2.1;
+				MARKETING_VERSION = 1.3;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.BaBaSaMa.The-Watch-Street-Journal.watchkitapp";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
@@ -649,7 +649,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2.1;
+				MARKETING_VERSION = 1.3;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.BaBaSaMa.The-Watch-Street-Journal.watchkitapp";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
@@ -674,7 +674,7 @@
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.news";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "BaBaSaMa Solution";
 				INFOPLIST_KEY_WKWatchOnly = NO;
-				MARKETING_VERSION = 1.2.1;
+				MARKETING_VERSION = 1.3;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.BaBaSaMa.The-Watch-Street-Journal";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
@@ -695,7 +695,7 @@
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.news";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "BaBaSaMa Solution";
 				INFOPLIST_KEY_WKWatchOnly = NO;
-				MARKETING_VERSION = 1.2.1;
+				MARKETING_VERSION = 1.3;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.BaBaSaMa.The-Watch-Street-Journal";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
@@ -731,7 +731,7 @@
 					"@executable_path/../../../../Frameworks",
 				);
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
-				MARKETING_VERSION = 1.2.1;
+				MARKETING_VERSION = 1.3;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.BaBaSaMa.The-Watch-Street-Journal.watchkitapp.The-Watch-Street-Journal-Widget";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
@@ -771,7 +771,7 @@
 					"@executable_path/../../../../Frameworks",
 				);
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
-				MARKETING_VERSION = 1.2.1;
+				MARKETING_VERSION = 1.3;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.BaBaSaMa.The-Watch-Street-Journal.watchkitapp.The-Watch-Street-Journal-Widget";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
